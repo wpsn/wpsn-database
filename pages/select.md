@@ -111,7 +111,7 @@ LIMIT 1;
 ```sql
 SELECT first_name, birth_date FROM employees
 ORDER BY birth_date
-LIMIT 1 OFFSET 10;
+LIMIT 1 OFFSET 9;
 ```
 
 # 중복되는 값 제거하기
@@ -162,7 +162,7 @@ WHERE first_name = 'Shahid' AND hire_date > '1997-09-12';
 여느 프로그래밍 언어가 그렇듯이 SQL에도 연산자 우선순위가 존재합니다. 예를 들어, `OR`보다 `AND`가 먼저 연산되기 때문에 아래와 같이 사용할 때는 주의해야 합니다.
 
 ```sql
--- first_name이 'Jeong' 혹은 'Shahid'인 사람들 중, 입사일이 '1997-09-12' 이후인 사람들을 불러오기
+-- first_name이 'Jeong' 혹은 'Shahid'인 사람들 중, 입사일이 '1997-09-12' 이후인 사람들을 불러오기 (틀림)
 SELECT * FROM employees
 WHERE first_name = 'Jeong' OR first_name = 'Shahid' AND hire_date > '1997-09-12';
 -- 뒤쪽의 AND가 먼저 연산되어, 원래 의도와는 다르게 first_name이 'Jeong'인 모든 사람들이 포함된 결과가 나옵니다.

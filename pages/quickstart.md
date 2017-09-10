@@ -17,10 +17,13 @@ SHOW DATABASES;
 ```sql
 -- 테이블 생성
 CREATE TABLE my_db.users (
-  -- [컬럼 이름] [컬럼 타입] [제약 조건]
+  -- `name`이라는 이름의 문자열 컬럼을 생성합니다. NULL을 허용하지 않습니다.
   name VARCHAR(30) NOT NULL,
+  -- `job`이라는 이름의 문자열 컬럼을 생성합니다. NULL을 허용합니다.
   job VARCHAR(30),
-  age INTEGER,
+  -- `age`라는 이름의 양수 컬럼을 생성합니다. NULL을 허용합니다.
+  age INTEGER UNSIGNED,
+  -- `name` 컬럼을 기본 키로 지정합니다.
   PRIMARY KEY (name)
 );
 
@@ -35,7 +38,7 @@ SHOW CREATE TABLE post;
 `USE [database]`는 기본 데이터베이스를 설정하는 명령입니다. 즉, SQL을 작성할 때 데이터베이스 이름을 생략할 수 있게 만들어줍니다. 워크벤치에서는 사이드바의 데이터베이스 이름을 더블 클릭해도 같은 동작을 합니다. 기본 데이터베이스를 선택한 후 아래 명령을 실행해보세요.
 
 ```sql
-CREATE TABLE my_table;
+DESCRIBE my_table;
 ```
 
 # 사용자 생성과 권한 설정
@@ -58,7 +61,7 @@ CREATE TABLE my_table;
 ```sql
 -- 하나의 레코드 추가하기
 INSERT INTO users (name, job, age)
-VALUES ('윤민지', '프론트엔드 개발자', 32)
+VALUES ('윤민지', '프론트엔드 개발자', 32);
 
 -- 여러 개의 레코드 추가하기
 INSERT INTO users (name, job, age)
@@ -73,7 +76,9 @@ VALUES ('한주원', '프론트엔드 개발자', 39),
 ```sql
 -- 모든 컬럼을 포함시켜 불러오기
 SELECT * FROM users;
+```
 
+```sql
 -- 특정 컬럼만 포함시켜 불러오기
 SELECT name, job FROM users;
 ```
@@ -83,7 +88,7 @@ SELECT name, job FROM users;
 ```sql
 UPDATE users
 SET job = '프로그래머'
-WHERE name = '정병언'
+WHERE name = '정병언';
 ```
 
 # 데이터 삭제하기

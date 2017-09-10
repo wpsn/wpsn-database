@@ -1,6 +1,6 @@
 # salaries 테이블
 
-실습용 `employees` 데이터베이스의 `salaries` 테이블에는 각 사원의 연봉 변동 내역이 저장되어 있습니다. 본 문서에서는 `salaries` 테이블을 이용해 실습합니다.
+실습용 `employees` 데이터베이스의 `salaries` 테이블에는 각 사원의 **연봉 변동 내역**이 저장되어 있습니다. 본 문서에서는 `salaries` 테이블을 이용해 실습합니다.
 
 # 집계 함수 (Aggregate Function)
 

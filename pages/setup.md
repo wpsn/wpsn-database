@@ -28,6 +28,8 @@ $ mysql-secure-installation
 
 ```mysql -uroot -p < employees.sql```
 
+윈도우의 경우, 위 명령을 실행할 때 Git bash 대신 명령 프롬프트를 이용해주세요. `mysql` 명령의 실행을 위해 환경변수 설정이 필요할 수 있습니다.
+
 ## MySQL Workbench 설치
 
 ![Workbench](images/workbench.png)
